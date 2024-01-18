@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+	<display-name>JavaG4</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+
+
+	<!-- ================28==================== -->
+	<servlet>
+		<servlet-name>BuildingInfo</servlet-name>
+		<servlet-class>com.buildinginfo.controller.BuildingInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BuildingInfo</servlet-name>
+		<url-pattern>/cproject/pages/bis.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- ================23==================== -->
+	<filter>
+		<filter-name>UserLoginFilter</filter-name>
+		<filter-class>filter.UserLoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>UserLoginFilter</filter-name>
+		<url-pattern>/consumer/protected/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>UserLoginFilter</filter-name>
+		<url-pattern>/GroupOrder.do</url-pattern>
+	</filter-mapping>
+
+	<!-- ================15==================== -->
+<servlet>
+		<servlet-name>VaryTypeServlet</servlet-name>
+		<servlet-class>com.varytype.controller.VaryTypeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VaryTypeServlet</servlet-name>
+		<url-pattern>/dinerbackground/pages/Team/shelve/varytype.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>productPhoto</servlet-name>
+		<servlet-class>com.product.controller.productPhoto</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>productPhoto</servlet-name>
+		<url-pattern>/dinerbackground/pages/Team/shelve/productPhoto.do</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+	<servlet>
+		<servlet-name>ProductServlet</servlet-name>
+		<servlet-class>com.product.controller.ProductServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProductServlet</servlet-name>
+		<url-pattern>/dinerbackground/pages/Team/shelve/product.do</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>ProductTypeServlet</servlet-name>
+		<servlet-class>com.producttype.controller.ProductTypeServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ProductTypeServlet</servlet-name>
+		<url-pattern>/dinerbackground/pages/Team/shelve/productType.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ProductVaryServlet</servlet-name>
+		<servlet-class>com.productvary.controller.ProductVaryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductVaryServlet</servlet-name>
+		<url-pattern>/dinerbackground/pages/Team/shelve/productVary.do</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>GroupOrderServletN</servlet-name>
+		<servlet-class>com.grouporder.controller.GroupOrderServletN</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GroupOrderServletN</servlet-name>
+		<url-pattern>/dinerbackground/pages/Team/ord_query/orderquery.do</url-pattern>
+	</servlet-mapping>
+	
+	
+		<servlet>
+		<servlet-name>GroupOrderServletC</servlet-name>
+		<servlet-class>com.grouporder.controller.GroupOrderServletN</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GroupOrderServletC</servlet-name>
+		<url-pattern>/dinerbackground/pages/Team/ord_query/orderquery2.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- ================10==================== -->
+
+	<!-- ================2==================== -->
+
+	<servlet>
+		<servlet-name>DinerInfoServletD</servlet-name>
+		<servlet-class>com.dinerinfo.controller.DinerInfoServletD</servlet-class>
+		 <multipart-config>
+        <!-- 配置上傳檔案大小的限制 -->
+        <max-file-size>10485760</max-file-size>  <!-- 10MB -->
+        <max-request-size>52428800</max-request-size>  <!-- 50MB -->
+        <file-size-threshold>2097152</file-size-threshold>  <!-- 2MB -->
+    </multipart-config>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>DinerInfoServletD</servlet-name>
+
+		<url-pattern>/dinerbackground/pages/Team/register/dinerInfo.do</url-pattern>
+		<url-pattern>/dinerbackground/pages/Team/login/dinerInfo.do</url-pattern>
+		<url-pattern>/dinerbackground/pages/Team/dashboard/dinerInfo.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>AdvertisementServlet</servlet-name>
+		<servlet-class>com.advertisement.controller.AdvertisementServlet</servlet-class>
+		 <multipart-config>
+        <!-- 配置上傳檔案大小的限制 -->
+        <max-file-size>10485760</max-file-size>  <!-- 10MB -->
+        <max-request-size>52428800</max-request-size>  <!-- 50MB -->
+        <file-size-threshold>2097152</file-size-threshold>  <!-- 2MB -->
+    </multipart-config>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AdvertisementServlet</servlet-name>
+
+		<url-pattern>/advertisement</url-pattern>
+
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BusinessHoursServlet</servlet-name>
+		<servlet-class>com.businesshours.controller.BusinessHoursServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BusinessHoursServlet</servlet-name>
+		<url-pattern>/businessHours.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- ================1==================== -->
+	<servlet>
+		<servlet-name>EmpjoServlet</servlet-name>
+		<servlet-class>com.webempadmin.controller.EmpjoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmpjoServlet</servlet-name>
+		<url-pattern>/background/pages/emp.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EmpPhoto</servlet-name>
+		<servlet-class>com.webempadmin.controller.EmpPhoto</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmpPhoto</servlet-name>
+		<url-pattern>/pages/emp.photo</url-pattern>
+	</servlet-mapping>
+
+	<!-- 後台濾器 -->
+	<filter>
+		<filter-name>bgloginFilter</filter-name>
+		<filter-class>filter.BgLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>bgloginFilter</filter-name>
+		<url-pattern>/background/pages/*</url-pattern>
+		<url-pattern>/cproject/pages/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		<dispatcher>ASYNC</dispatcher>
+	</filter-mapping>
+
+	<!-- 後台登入/登出頁面 -->
+	<servlet>
+		<servlet-name>bglogin</servlet-name>
+		<servlet-class>com.background.BgLoginHandler</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>bglogin</servlet-name>
+		<url-pattern>/background/bglogin</url-pattern>
+		<url-pattern>/background/pages/bglogin</url-pattern>
+		<url-pattern>/cproject/pages/bglogin</url-pattern>
+	</servlet-mapping>
+
+	<!-- 查詢會員 -->
+	<servlet>
+		<servlet-name>UserInfo2Servlet</servlet-name>
+		<servlet-class>com.userinfo.controller.UserInfo2Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserInfo2Servlet</servlet-name>
+		<url-pattern>/background/pages/user.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 載入會員照片 -->
+	<servlet>
+		<servlet-name>UserImage</servlet-name>
+		<servlet-class>com.userinfo.controller.UserImage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserImage</servlet-name>
+		<url-pattern>/background/pages/UserImage</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 會員最新消息 -->
+	<servlet>
+		<servlet-name>UserNewsServlet</servlet-name>
+		<servlet-class>com.usernews.controller.UserNewsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserNewsServlet</servlet-name>
+		<url-pattern>/background/pages/usernews.do</url-pattern>
+	</servlet-mapping>
+
+		<!-- 平台經營:總數量、總營收 -->
+	<servlet>
+		<servlet-name>BgsalesServlet</servlet-name>
+		<servlet-class>com.background.BgsalesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BgsalesServlet</servlet-name>
+		<url-pattern>/background/pages/BgsalesServlet</url-pattern>
+	</servlet-mapping>
+	
+		<!-- 重複姓名驗證 -->
+	<servlet>
+		<servlet-name>EmpNameServlet</servlet-name>
+		<servlet-class>com.webempadmin.controller.EmpNameServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmpNameServlet</servlet-name>
+		<url-pattern>/background/pages/EmpNameServlet</url-pattern>
+	</servlet-mapping>	
+	
+</web-app>
